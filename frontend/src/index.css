@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-image: linear-gradient(180deg, #202529, #3a3844, #202529); */
+  height: 100%;
+  width: 100%;
+  margin: 0; 
+  
+}
+
+.app-footer{
+  font-size: 18px;
+  background-image: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1030;
+  
+}
+.app-footer > p{
+  color: darkgrey;
+  text-align: center;
+  
+}
