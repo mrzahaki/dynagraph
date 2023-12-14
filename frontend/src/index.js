@@ -13,7 +13,7 @@ createRoot(rootElement).render( // use createRoot without ReactDOM
       <App />
     </BrowserRouter>
     <footer className='app-footer'>
-      <p>© 2023 Hussein Zahaki. All rights reserved.</p>
+      <p>© 2023 Hossein Zahaki. All rights reserved.</p>
     </footer>
   </React.StrictMode>
 );
