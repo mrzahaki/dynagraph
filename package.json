@@ -2,7 +2,7 @@
   "name": "dynagraph",
   "private": true,
   "version": "1.0.0",
-  "description": "",
+  "description": "Optimize graph visualization with Cytoscape, React, and Dijkstra's algorithm. Edit edge weights, visualize optimal paths, and manage nodes intuitively in an interactive environment.",
   "main": "./main.js",
   "homepage": "./",
   "scripts": {
