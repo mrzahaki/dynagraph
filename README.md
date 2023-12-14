@@ -9,6 +9,8 @@ Dynagraph is a dynamic graph visualization tool built with Cytoscape and React. 
 - **Draw Mode:** Enable/disable draw mode by holding and releasing the right-click button.
 - **Optimal Path Visualization:** Utilize Dijkstra's algorithm to highlight optimal paths.
 - **Interactive Controls:** Double-click to remove nodes and edges.
+- **Node Selection:** Click once to select a start node, twice to set it as a stop node.
+- **Stop Node Removal:** Click thrice to remove the stop node property.
 
 ## Installation
 
@@ -23,6 +25,8 @@ Dynagraph is a dynamic graph visualization tool built with Cytoscape and React. 
 - **Draw Mode:** Hold right-click to enable dynamic edge creation. Release to disable.
 - **Optimal Path:** Select start and stop nodes to visualize the optimal path.
 - **Removing Elements:** Double-click nodes or edges to remove them interactively.
+- **Node Selection:** Click once on a node to set it as the start node, twice to set it as the stop node.
+- **Stop Node Removal:** Click thrice on a pre-selected stop node to remove the stop node property.
 
 ## Technologies Used
 
