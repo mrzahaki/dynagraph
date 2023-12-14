@@ -1,7 +1,3 @@
-Got it! Here's an updated version of the README with the additional functionalities:
-
----
-
 # Dynagraph
 
 Dynagraph is a dynamic graph visualization tool built with Cytoscape and React. This interactive platform allows users to manage nodes, edit edge weights, toggle draw modes, and visualize optimal paths using Dijkstra's algorithm.
