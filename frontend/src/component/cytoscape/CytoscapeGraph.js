@@ -183,6 +183,7 @@ class CytoscapeGraph extends Component {
     this.handleMouseDown = this.handleMouseDown.bind(this);
     this.handleMouseUp = this.handleMouseUp.bind(this);
     this.cytoscape_click_handler = this.cytoscape_click_handler.bind(this);
+    this.handleEdgeDBClick = this.handleEdgeDBClick.bind(this);
     // this.edge_interaction_handler = this.edge_interaction_handler.bind(this);
 
     
@@ -198,8 +199,21 @@ class CytoscapeGraph extends Component {
     document.addEventListener('mouseup', this.handleMouseUp);
 
      // Add click event listener to nodes for selecting/deselecting start/stop nodes
-     this.cytoscape_instance.on('click', 'node', this.cytoscape_click_handler);
      this.cytoscape_instance.on('click touchstart', 'node', this.cytoscape_click_handler);
+     this.cytoscape_instance.on('dblclick', 'edge', this.handleEdgeDBClick);
+     let lastTouchTime = 0;
+    const touchDelay = 300; // Adjust this value to suit your needs
+
+    this.cytoscape_instance.on('tap', 'edge', (event) => {
+      const currentTime = new Date().getTime();
+      const timeSinceLastTouch = currentTime - lastTouchTime;
+      lastTouchTime = currentTime;
+
+      if (timeSinceLastTouch < touchDelay) {
+        // Double tap detected
+        this.handleEdgeDBClick(event);
+      }
+    });
   }
 
   componentWillUnmount() {
@@ -270,19 +284,19 @@ class CytoscapeGraph extends Component {
       // Ensure edgehandles is registered as an extension
     cytoscape.use(edgehandles);
     this.edgehandles_instance = this.cytoscape_instance.edgehandles();
-
-    this.cytoscape_instance.on('dblclick', 'edge', (event) => {
-      const edge = event.target;
-      this.setSelectedEdge(edge);
-      this.handleEdgeWeightInput();
-    });
-
-
     
     } catch (error) {
       console.error('Error loading Cytoscape or edgehandles:', error);
     }
   };
+
+
+  handleEdgeDBClick(event){
+    const edge = event.target;
+    this.setSelectedEdge(edge);
+    this.handleEdgeWeightInput();
+  }
+
 
   handleWeightSubmit(e) {
     e.preventDefault();
