@@ -199,7 +199,7 @@ class CytoscapeGraph extends Component {
 
      // Add click event listener to nodes for selecting/deselecting start/stop nodes
      this.cytoscape_instance.on('click', 'node', this.cytoscape_click_handler);
-    
+     this.cytoscape_instance.on('click touchstart', 'node', this.cytoscape_click_handler);
   }
 
   componentWillUnmount() {
